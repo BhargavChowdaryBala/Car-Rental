@@ -8,7 +8,7 @@ const Hero = () => {
       <h1 className='text-4xl md:text-5xl font-semibold'> Your Journey, Your Way.</h1>
          <h6 className='text-xl md:text-xl font-semibold'> premium cars rentals at affordable daily rates. Book your car in under two minutes!</h6>
       <form className='flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg md:rounded-full w-full max-w-80 md:max-w-200 bg-white shadow-[0px_8px_20px_rgba(0,0,0,0.1)] '>
-        <div className='flex flex-col md:flex-row items-start md:items-center gap-10 min-md:,l-8'>
+        <div className='flex flex-col md:flex-row items-start md:items-center gap-10 md:pl-8'>
             <div className='flex flex-col  items-start gap-2' >
                 <select  required value={pickupLocation} onChange={(e)=>setPickupLocation(e.target.value)} className='border border-borderColor rounded-lg px-4 py-2 w-full text-left text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary'>
                     <option value="">pickup Location</option>
@@ -32,7 +32,7 @@ const Hero = () => {
             
         </div>
 
-        <button className='flex items-center justify-center gap-1 px-9 py-3 msx-sm:mt-4 bg-primary hover :bg-primary-dull text-white rounded-full cursor-pointer '>
+        <button className='flex items-center justify-center gap-1 px-9 py-3 max-sm:mt-4 bg-primary hover:bg-primary-dull text-white rounded-full cursor-pointer '>
                 <img src={assets.search_icon} alt="search" className='brightness-300' />
                 search
             </button>
