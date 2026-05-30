@@ -16,7 +16,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-
 app.use("/api/user",userRouter)
+app.use("/api/owner",ownerRouter)
+
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=> console.log(`Server running on port ${PORT}`));
