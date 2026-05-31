@@ -16,6 +16,7 @@ export const AppProvider = ({ children })=>{
     const [user, setUser] = useState(null)
     const [isOwner, setIsOwner] = useState(false)
     const [showLogin, setShowLogin] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [pickupDate, setPickupDate] = useState('')
     const [returnDate, setReturnDate] = useState('')
 
@@ -33,6 +34,8 @@ export const AppProvider = ({ children })=>{
            }
         } catch (error) {
             toast.error(error.message)
+        } finally {
+            setLoading(false)
         }
     }
     // Function to fetch all cars from the server
@@ -62,6 +65,9 @@ export const AppProvider = ({ children })=>{
         const token = localStorage.getItem('token')
         setToken(token)
         fetchCars()
+        if (!token) {
+            setLoading(false)
+        }
     },[])
 
     // useEffect to fetch user data when token is available
@@ -75,7 +81,7 @@ export const AppProvider = ({ children })=>{
     const value = {
         navigate, currency, axios, user, setUser,
         token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logout, fetchCars, cars, setCars, 
-        pickupDate, setPickupDate, returnDate, setReturnDate
+        pickupDate, setPickupDate, returnDate, setReturnDate, loading
     }
 
     return (
