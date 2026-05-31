@@ -182,4 +182,4 @@ export const updateUserImage = async (req, res)=>{
         console.log(error.message);
         res.json({success: false, message: error.message})
     }
-}    
+}   
