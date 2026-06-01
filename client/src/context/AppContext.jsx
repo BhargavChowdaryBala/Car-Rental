@@ -1,7 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react"; //instead of props we use the useContext hook to access the values though any inner component without need of passing props through all the components
+
 import axios from 'axios'
-import {toast} from 'react-hot-toast'
-import { useNavigate } from "react-router-dom";
+import {toast} from 'react-hot-toast'   //toast library for notifications and display messages to the user and dissapears automatically after a few seconds   
+import { useNavigate } from "react-router-dom"; //useNavigate is a hook from react-router-dom that allows us to programmatically navigate to different routes in our application.
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL
 
@@ -9,7 +10,7 @@ export const AppContext = createContext();
 
 export const AppProvider = ({ children })=>{
 
-    const navigate = useNavigate()
+    const navigate = useNavigate() 
     const currency = import.meta.env.VITE_CURRENCY
 
     const [token, setToken] = useState(null)
