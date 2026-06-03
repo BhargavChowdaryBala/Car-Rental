@@ -192,3 +192,7 @@ Configured to rewrite all requests (`/(.*)`) back to `/index.html`, allowing Rea
 
 > [!IMPORTANT]
 > The database schema uses the field name `isAvaliable` for tracking car availability. Ensure your payloads use this exact field name to avoid schema insertion errors.
+
+
+
+
